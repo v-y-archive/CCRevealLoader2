@@ -1,6 +1,6 @@
-## CCRevealLoader Tweak 
+## CCRevealLoader 2 Tweak
 
-CCRevealLoader is inspired by [RevealLoader](https://github.com/heardrwt/RevealLoader)
+**Now supports Reveal 32+**
 
 CCRevealLoader dynamically loads RevealServer.framework  (Reveal.app support) into iOS apps on jailbroken devices. Configuration is via the CCRevealLoader menu in Settings.app
 
@@ -15,16 +15,25 @@ For more info see [revealapp.com](http://revealapp.com)
 
 - Theos
 - Reveal.app installed
+- libimobiledevice (iproxy)
+- ldid
 
 ## Install tweak
 
-Change the value of `THEOS_DEVICE_IP` to your jailbreak device's ip in the `Makefile` file at first line, then execute command:
+If you have multiple devices then run:
+
+```
+make package install udid=D371c31D...
+```
+
+Else simply run:
 
 ```
 make package install
 ```
 
-**Note:** To make sure this tweak work correctly. Before install this tweak, change the command `codesign` in the `before-package` section of `Makefile`,use your develop certificate. If you dont have a certificate, you can remove the three command lines which begin with `lipo` and `codesign`.
+If password requested, try `alpine`
+
 
 ## How to Use
 Open 'Settings > CCRevealLoader > Enabled Applications' and toggle the application or applications that you want to debug to on.
@@ -32,6 +41,3 @@ Open 'Settings > CCRevealLoader > Enabled Applications' and toggle the applicati
 Launch the target application and it should appear inside Reveal.app on your Mac. 
 
 (You will likely need to quit and relaunch the target application)
-
-## Be Social
-Follow me on [Twitter](https://twitter.com/intent/follow?screen_name=nswebfrog) (@nswebfrog)
